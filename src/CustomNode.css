@@ -1,0 +1,48 @@
+/* src/CustomNode.css */
+.custom-node {
+    border: 2px solid #ccc5c5;
+    border-radius: 10px;
+    background: white;
+    width: 200px;
+    box-shadow: 4px 4px 10px 3px grey;
+    position: relative;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .custom-node:hover {
+    border: 2px solid rgb(76, 76, 203);
+  }
+  
+  .custom-node-header {
+    padding: 5px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .custom-node-icon {
+    margin-right: 10px;
+  }
+  
+  .custom-node-body {
+    color: #7e7c7c;
+  }
+  
+  .custom-handle {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #555;
+    background: white;
+  }
+  
+  hr {
+    color: #ccc5c5;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-node:hover hr {
+    color: blue;
+  }
+  
