@@ -1,0 +1,60 @@
+/* src/components/NodeDetails.css */
+.details {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .details h2 {
+    margin-top: 0;
+  }
+  
+  .details p {
+    margin: 0;
+  }
+  .child1{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    align-items: center;
+  }
+
+  .icon{
+    font-size: 40px;
+  }
+
+
+  .change-btn{
+    background-color: #fff;
+    color: rgb(10, 2, 2);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid grey;
+  }
+
+  .change-btn:hover {
+    border-color: blue;
+    color: blue;
+   }
+   .left{
+    display: flex;
+    gap: 5px;
+   }
+
+   hr {
+    height: 0.1px;
+    color: grey;
+    background-color: grey;
+    transition: color 0.3s ease;
+  }
+  
+input{
+    border: none;
+    font-size: 20px;
+}

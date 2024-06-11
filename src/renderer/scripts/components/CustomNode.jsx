@@ -1,7 +1,7 @@
 // src/CustomNode.jsx
 import PropTypes from 'prop-types';
 import { Handle } from 'reactflow';
-import './CustomNode.css';
+import '../components/CustomNode.css';
 
 const CustomNode = ({ data }) => {
   const detailsLines = data.details ? data.details.split('\n') : [];

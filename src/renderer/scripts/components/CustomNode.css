@@ -38,11 +38,12 @@
   }
   
   hr {
-    color: #ccc5c5;
+    height: 0.1px;
+    color: #030000;
     transition: color 0.3s ease;
   }
   
   .custom-node:hover hr {
-    color: blue;
+    background-color: rgb(76, 76, 203);
   }
   

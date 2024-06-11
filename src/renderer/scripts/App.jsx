@@ -8,8 +8,9 @@ import ReactFlow, {
   addEdge,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import CustomNode from './CustomNode';
-import './App.css';  // Import the global styles if any
+import CustomNode from './components/CustomNode';
+import SideToolbar from './components/SideToolbar';
+import '../styles/App.css';
 
 const nodeTypes = {
   customNode: CustomNode,
@@ -31,7 +32,7 @@ export default function App() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const [selectedNode, setSelectedNode] = useState(null);
-  const [toolbarOpen, setToolbarOpen] = useState(true);
+  const [toolbarOpen, setToolbarOpen] = useState(false);
 
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
@@ -68,21 +69,10 @@ export default function App() {
         </ReactFlow>
       </div>
       {toolbarOpen && (
-        <div className="side-toolbar">
-          <button onClick={toggleToolbar} className="toggle-button">Close</button>
-          {selectedNode ? (
-            <div className='details'>
-              <div></div>
-              <div><p><strong>Label:</strong> {selectedNode.data.label}</p></div>
-              <div><p><strong>Details:</strong> {selectedNode.data.details}</p></div>
-            </div>
-          ) : (
-            <p>Click on a node to see its details</p>
-          )}
-        </div>
+        <SideToolbar node={selectedNode} isOpen={toolbarOpen} toggleToolbar={toggleToolbar} />
       )}
       {!toolbarOpen && (
-        <button onClick={toggleToolbar} className="toggle-button" style={{ position: 'absolute', right: 0 }}>
+        <button onClick={toggleToolbar} className="toggle-button open-button" style={{ position: 'absolute', right: 0 }}>
           Open
         </button>
       )}
