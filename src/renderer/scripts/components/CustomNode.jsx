@@ -1,16 +1,28 @@
-// src/CustomNode.jsx
-import PropTypes from 'prop-types';
-import { Handle } from 'reactflow';
-import '../components/CustomNode.css';
+import PropTypes from "prop-types";
+import { Handle } from "reactflow";
+import "./CustomNode.css";
 
 const CustomNode = ({ data }) => {
-  const detailsLines = data.details ? data.details.split('\n') : [];
+  const detailsLines = data.details ? data.details.split("\n") : [];
 
   return (
-    <div className={`custom-node ${data.type}`}>
+    <div className={"custom-node "}>
       <div className="custom-node-header">
-        {data.icon && <span className="custom-node-icon">{data.icon}</span>}
-        <strong>{data.label}</strong>
+        {(
+          <div
+            className="custom-node-icon"
+            style={{
+              background: data.background,
+              border: "1px solid",
+              borderColor: data.borderColor,
+            }}
+          >
+            <div className="node-icon" style={{color: data.color}}>{data.icon}</div>
+          </div>
+        )}
+        <h4>
+          <strong>{data.label}</strong>
+        </h4>
       </div>
       <hr />
       <div className="custom-node-body">

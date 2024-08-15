@@ -1,49 +1,62 @@
-/* src/CustomNode.css */
 .custom-node {
-    border: 2px solid #ccc5c5;
-    border-radius: 10px;
-    background: white;
-    width: 200px;
-    box-shadow: 4px 4px 10px 3px grey;
-    position: relative;
-    padding: 10px;
-    transition: border-color 0.3s ease;
-  }
-  
-  .custom-node:hover {
-    border: 2px solid rgb(76, 76, 203);
-  }
-  
-  .custom-node-header {
-    padding: 5px;
-    border-radius: 8px 8px 0 0;
-    display: flex;
-    align-items: center;
-    
-  }
-  
-  .custom-node-icon {
-    margin-right: 10px;
-  }
-  
-  .custom-node-body {
-    color: #7e7c7c;
-  }
-  
-  .custom-handle {
-    width: 10px;
-    height: 10px;
-    border: 2px solid #555;
-    background: white;
-  }
-  
-  hr {
-    height: 0.1px;
-    color: #030000;
-    transition: color 0.3s ease;
-  }
-  
-  .custom-node:hover hr {
-    background-color: rgb(76, 76, 203);
-  }
-  
+  border: 2px solid var(--custom-node-border-color);
+  border-radius: 10px;
+  background: var(--custom-node-bg-color);
+  width: 350px;
+  position: relative;
+  padding: 5px;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-node:hover {
+  border: 2px solid var(--custom-node-hover-border-color);
+}
+
+.custom-node-header {
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.custom-node-icon {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.node-icon {
+  position: relative;
+  top: 2.5px;
+  font-size: 24px;
+}
+
+.custom-node-body {
+  color: var(--custom-node-text-color);
+}
+
+.custom-handle {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--custom-handle-border-color);
+  background: var(--custom-handle-bg-color);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-node:hover .custom-handle {
+  border-color: var(--custom-node-hover-border-color);
+  border-color: var(--custom-node-hover-border-color);
+}
+
+hr {
+  height: 0.1px;
+  color: var(--hr-color);
+  transition: color 0.3s ease;
+}
+
+.custom-node:hover hr {
+  border-top: 1px solid var(--custom-node-hover-border-color);
+}

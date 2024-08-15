@@ -1,13 +1,40 @@
-/* src/styles/App.css */
-.side-toolbar {
-  width: 30vw;
-  height: 100vh;
-  border-left: 1px solid #ccc;
-  padding: 10px;
-  overflow-y: auto;
-  background-color: #fff;
-  position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  max-height: 95vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Inter, sans-serif;
 }
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.reactflow {
+  flex-grow: 1;
+  width: 75vw;
+}
+
+.sidebar {
+  width: 25vw;
+  background-color: var(--background-color);
+  border-left: 4px solid var(--border-color);
+  overflow-y: auto;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
 
 .side-toolbar h2 {
   margin-top: 0;
@@ -18,21 +45,79 @@
   top: 10px;
   right: 10px;
   z-index: 1000;
-  background-color: #fff;
-  color: rgb(10, 2, 2);
-  border: none;
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--button-border-color);
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  border: 1px solid grey;
 }
 
 .toggle-button:hover {
- border-color: blue;
- color: blue;
+  border-color: var(--button-hover-border-color);
+  color: var(--button-hover-border-color);
 }
 
-.open-button {
-  right: 10px; /* Adjust the position of the "Open" button */
-  top: 10px;
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 38vw;
+  }
+  .reactflow{
+    width: 60vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 4ovw;
+  }
+  .reactflow{
+    width: 60vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 50vw;
+  }
+  .reactflow{
+    width: 50vw;
+  }
+  .toggle-button {
+    padding: 8px 16px;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 100vw;
+    height: 30vh;
+    position: relative;
+  }
+  .reactflow{
+    width: 100vw;
+    height:70vw ;
+  }
+  .main-container {
+    flex-direction: column;
+  }
+  .toggle-button {
+    padding: 6px 12px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-button {
+    padding: 5px 10px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
 }

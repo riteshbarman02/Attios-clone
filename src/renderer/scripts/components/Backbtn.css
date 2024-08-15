@@ -1,0 +1,39 @@
+@import './Variable.css';
+.back-btn-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    flex-shrink: 0;
+    padding: 8px 12px;
+    width: 105%;
+    height: 48px;
+    border: 3px solid var(--border-color);
+}
+
+.back-btn{
+    --button-background-base: transparent;
+    --button-background-hover: rgba(35, 37, 41, 0.05);
+    --button-background-active: rgba(35, 37, 41, 0.05);
+    margin: 0px;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    gap: 6px;
+    background: var(--button-background-base);
+    padding: 7px;
+    border-radius: 8px;
+    box-shadow: var(--button-shadow);
+    transition: background-color 0.2s ease 0s, color 0.2s ease 0s, box-shadow 0.2s ease 0s
+}
+.back-btn:hover{
+    background-color: var( --border-color);
+}
